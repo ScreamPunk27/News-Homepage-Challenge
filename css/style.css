@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+}
+
+:root{
+    --softOrange:hsl(35, 77%, 62%);
+    --softRed:hsl(5, 85%, 63%);
+    --neutralOffWhite:hsl(36, 100%, 99%);
+    --grayishBlue:hsl(233, 8%, 79%);
+    --darkGrayishBlue:hsl(236, 13%, 42%);
+    --veryDarkBlue:hsl(240, 100%, 5%);
+}
+
+
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    font-family: 'Inter',sans-serif;
+}
+
+nav{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: 2em 0;    
+}
+
+#links{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    height: 100%; 
+    background-color: pink;  
+}
+
+#links img{
+    float: right;
+    margin: 1rem 1rem 0 0;
+    cursor: pointer;
+}
+
+#links ul{
+    margin-top: 7rem;
+    margin-left: 2rem;
+}
+
+#links ul li{
+    list-style:none;
+    margin-bottom: 1.5rem;
+}
+
+#links ul li a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 400;
+}
+
+.nav-button{
+    cursor: pointer;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+#button-close{
+    display:none;
+}
+
+#page-main{
+
+}
+
+.main-content h1{
+    font-size: 300%;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.main-content p{
+    line-height: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--darkGrayishBlue);
+}
+
+.main-content button{
+    padding: 1rem 2rem;
+    background-color:var(--softRed);
+    color: var(--neutralOffWhite);
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+.main-img{
+    width: 100%;
+}
+
+.main-img img{
+    width: 100%;
+}
+
+#sidebar{
+    margin: 5rem 0;
+    padding: 1rem;
+    background: var(--veryDarkBlue);
+}
+
+#sidebar h1{
+    color: var(--softOrange);
+    margin-bottom: 1.5rem;
+    font-size: 200%;
+}
+
+#sidebar h3{
+    color: var(--neutralOffWhite);
+    font-size: 150%;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+#sidebar p{
+    color: var(--grayishBlue);
+}
+
+#sidebar hr{
+    margin: 2rem 0;
+}
+
+#page-bottom{
+    
+}
+
+.container{
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+
+.container-img{
+    height: 170px;
+}
+
+.container-img img{
+    height: 100%;
+}
+
+.container-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 1rem;
+}
+
+.container-text h1{
+    font-size: 250%;
+    font-weight: 700;
+    color: var(--darkGrayishBlue);
+}
+
+.container-text h2{
+    font-weight: 800;
+    color: #000;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.container-text p{
+    color: var(--darkGrayishBlue);
+    line-height: 1.5rem;
+    margin-top: 1rem;
+}
+
+
+#links ul li a:hover, #sidebar h3:hover{
+    color: var(--softOrange);
+}
+
+.main-content button:hover{
+    background-color: var(--veryDarkBlue);
+}
+
+.container-text h2:hover{
+    color: var(--softRed);
+}
+
+@media screen and (min-width:1200px){
+    main{
+        padding: 3rem;
+        display: grid;
+        grid-template-areas:"navi navi navi" "maini maini sidebari" "footeri footeri footeri";
+        gap: 1em;
+    }
+
+    nav{
+        grid-area: navi;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+       
+    }
+
+    .nav-button{
+        display: none;
+    }
+
+    #links{
+        display: block;
+        position: relative;
+        height: auto;
+        background: none;
+    }
+
+    #links ul{
+        float: right;
+        margin-top: 0;
+        margin-left: 0;
+    }
+    
+    #links ul li{
+       display: inline;
+       margin-left: 2rem; 
+    }
+
+    #page-main{
+        height: 450px;
+        grid-area: maini;
+        
+    }
+
+    .main-img{
+        height:55%;
+        
+    }
+
+    .main-content{
+        height:45%;
+        display: grid;
+        grid-template-areas: "title text" "title button";
+       
+    }
+
+    .main-content h1{
+        grid-area: title;
+        margin-top: 1rem;
+        width: 80%;
+    }
+
+   
+    .main-content p{
+        grid-area: text;
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .main-content button{
+        grid-area: button;
+        width: 40%;
+    }
+
+    picture{
+        height: 100%;
+    }
+
+    picture img{
+       height: 100%;
+       
+    }
+
+    #sidebar{
+        padding: 0 1em;
+        margin: 0;
+        height: 450px;
+        grid-area: sidebari;
+    }
+
+    #page-bottom{
+        display: flex;
+        grid-area: footeri;
+        margin-top: 4rem;
+    }
+
+    .container-text h2, .container-text p{
+        margin-top: 0.5rem;
+    }
+}
